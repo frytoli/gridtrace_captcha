@@ -1,4 +1,10 @@
-$(document).ready(function(){
+block_default_color$(document).ready(function(){
+
+  // Set block colors
+  var block_default_color = '#ffffff'; // Default color of normal blocks
+  var block_path_color = '#e1ffd4';    // Color of the blocks in the path to be traced
+  var block_good_color = '#81f051';    // Color of blocks that are successfully traced
+  var block_bad_color = '#ff1500';     // Color of blocks that are not a part of the path and are incorrectly traced
 
   // Dynamically generate captcha grid
   var parent_div = document.getElementById('captcha-grid');
@@ -20,6 +26,7 @@ $(document).ready(function(){
       var new_block = document.createElement('div');
       new_block.className = 'captcha-block';
       new_block.id = new_id;
+      new_block.style.backgroundColor = block_default_color;
       new_row.appendChild(new_block);
     }
   }
@@ -119,7 +126,7 @@ $(document).ready(function(){
     var np_index = not_path.indexOf(path[itr]);
     if (np_index !== -1) not_path.splice(np_index, 1);
     var box = document.getElementById(path[itr]);
-    box.style.backgroundColor = '#e1ffd4';
+    box.style.backgroundColor = block_path_color;
   }
 
   // Handle mouseover events for captcha
@@ -129,7 +136,7 @@ $(document).ready(function(){
       if (path.includes(e.target.id) == true && completed_path.includes(e.target.id) == false) {
         completed_path.push(e.target.id);
         var box = document.getElementById(e.target.id);
-        box.style.backgroundColor = '#81f051';
+        box.style.backgroundColor = block_good_color;
         if (completed_path.length == path_len) {
           // verification is true
           all_points = [];
@@ -140,12 +147,12 @@ $(document).ready(function(){
       } else if (not_path.includes(e.target.id) == true && completed_path != []) {
         for (itr=0; itr<completed_path.length; itr++) {
           var box = document.getElementById(completed_path[itr]);
-          box.style.backgroundColor = '#e1ffd4';
+          box.style.backgroundColor = block_path_color;
         }
         completed_path = [];
         var box = document.getElementById(e.target.id);
-        box.style.backgroundColor = '#ff1500';
-        setTimeout(function(){ box.style.backgroundColor = 'white'; },1000);
+        box.style.backgroundColor = block_bad_color;
+        setTimeout(function(){ box.style.backgroundColor = block_default_color; },1000);
       }
     }
   }

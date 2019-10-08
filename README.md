@@ -27,11 +27,22 @@ Declare a div where you would like the grid to be located on your page. Set the 
 
 #### CSS
 
-Stylize the elements as desired. The elements and their corresponding class names are as follows. Note that the only stylization that you do not have control over is the color of the randomly selected captcha block path, the color of successfully traced captcha blocks, and the color of the incorrectly traced captcha blocks:
+Stylize the elements as desired. The elements and their corresponding class names are as follows:
 
 * captcha-grid : the grid element containing the captcha blocks
 * captcha-block-row : the individual rows of captcha blocks contained by the grid element
 * captcha-block : the individual captcha blocks that make up the rows within the grid element
+
+#### JS
+
+Block colors can be personalized with minor edits to the js script. Simply change the following variables at the top of "gridtrace_captcha.js":
+
+```
+var block_default_color = '#ffffff';
+var block_path_color = '#e1ffd4';
+var block_good_color = '#81f051';
+var block_bad_color = '#ff1500';
+```
 
 #### Validation
 
