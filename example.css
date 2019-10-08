@@ -1,0 +1,41 @@
+body {
+  background-color: white;
+  padding: 200px;
+  font-size: 14px;
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.captcha-container {
+  width: 400px;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  padding: 7px;
+  margin: 0 auto;
+}
+
+.captcha-text {
+  padding: 15px;
+}
+
+.captcha-grid {
+  width: 85%;
+  margin: 0 auto;
+}
+
+.captcha-block-row {
+  display: block;
+  height: 100%;
+  font-size: 0;
+}
+
+.captcha-block {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  margin: 2px;
+}
