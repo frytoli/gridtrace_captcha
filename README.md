@@ -35,7 +35,7 @@ Stylize the elements as desired. The elements and their corresponding class name
 
 #### JS
 
-Block colors can be personalized with minor edits to the js script. Simply change the following variables at the top of "gridtrace_captcha.js":
+Block colors can be personalized with minor edits to the js script. Simply change the following variables at the top of "gridtrace_captcha.js". (You could even go crazy and randomize this! That might make captcha security even stronger.):
 
 ```
 var block_default_color = '#ffffff';
@@ -65,4 +65,16 @@ var is_validated = validater.getAttribute('value');
 if (var == 'success') {
   successful_captcha_attempt = true;
 }
+```
+
+The dynamically generated validation HTML element before validation looks like this:
+
+```
+<div id='captcha-validater' style='display:none' value=''></div>
+```
+
+And, after validation it looks like this:
+
+```
+<div id='captcha-validater' style='display:none' value='success'></div>
 ```
