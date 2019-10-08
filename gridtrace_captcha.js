@@ -1,4 +1,4 @@
-block_default_color$(document).ready(function(){
+$(document).ready(function(){
 
   // Set block colors
   var block_default_color = '#ffffff'; // Default color of normal blocks
@@ -6,10 +6,12 @@ block_default_color$(document).ready(function(){
   var block_good_color = '#81f051';    // Color of blocks that are successfully traced
   var block_bad_color = '#ff1500';     // Color of blocks that are not a part of the path and are incorrectly traced
 
+  // Set grid size
+  var max_x = 8;
+  var max_y = 4;
+
   // Dynamically generate captcha grid
   var parent_div = document.getElementById('captcha-grid');
-  var max_x = Number(parent_div.getAttribute('max_x'));
-  var max_y = Number(parent_div.getAttribute('max_y'));
   var validater = document.createElement('div');
   validater.id = 'captcha-validater';
   validater.style.display = 'none';

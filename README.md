@@ -1,12 +1,12 @@
 # Gridtrace CAPTCHA
 
-##### Built with pure JS
-
 ![gridtrace](https://user-images.githubusercontent.com/17416542/66367417-b59f7c00-e959-11e9-843f-29c7c611f624.gif)
+
+A pure JS CAPTCHA solution that prompts a user to trace a randomly generated grid path of blocks in succession. The generated grid path is always at least 6 blocks long, and at most 10 blocks long (6 <= p <= 10, where p is path length).
 
 ### Dependencies
 
-Currently works with Jquery-3.4.1
+Tested with Jquery-3.4.1
 
 ### How to Use
 
@@ -14,7 +14,7 @@ Please view the example css and html files.
 
 #### HTML
 
-Declare a div where you would like the grid to be located on your page. Set the following attributes: class='captcha-grid', id='captcha-grid', max_x='x' where x is the maximum number of desired columns on the x-axis, max_y='y' where y is the number of desired rows on the y-axis:
+Declare a div where you would like the grid to be located on your page. Set the following two attributes: class='captcha-grid', id='captcha-grid':
 
 ```
 <!-- Import source -->
@@ -22,7 +22,7 @@ Declare a div where you would like the grid to be located on your page. Set the 
 <script type='text/javascript' src='gridtrace_captcha.js'></script>
 
 <!-- Create the 'captcha-grid' element -->
-<div class='captcha-grid' id='captcha-grid' max_x='8' max_y='4'></div>
+<div class='captcha-grid' id='captcha-grid'></div>
 ```
 
 #### CSS
@@ -42,6 +42,13 @@ var block_default_color = '#ffffff';
 var block_path_color = '#e1ffd4';
 var block_good_color = '#81f051';
 var block_bad_color = '#ff1500';
+```
+
+Set the grid size in a similar way. Change the "max_x" and "max_y" variables at the top of "gridtrace_captcha.js", where max_x is the maximum number of desired columns on the x-axis, and max_y is the number of desired rows on the y-axis. The default values of these variables of 8 and 4, respectively:
+
+```
+var max_x = 8;
+var max_y = 4;
 ```
 
 #### Validation
